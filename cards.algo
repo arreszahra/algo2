@@ -1,0 +1,19 @@
+
+ALGORITHM cards
+VAR
+    i, j: INTEGER;
+    x: INTEGER; // Assuming A is an array of integers
+    
+BEGIN
+    FOR i FROM 1 TO LENGTH(A) DO
+        x := A[i];
+        j := i - 1;
+        
+        WHILE j >= 0 AND A[j] > x DO
+            A[j + 1] := A[j];
+            j := j - 1;
+        END_WHILE
+        
+        A[j + 1] := x;
+    END_FOR
+END
